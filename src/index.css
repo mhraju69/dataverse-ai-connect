@@ -48,6 +48,111 @@
   }
 }
 
+/* Landing Page Specific Styles */
+.hero-section {
+  @apply py-20 bg-white;
+}
+
+.container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.hero-content {
+  @apply text-center max-w-4xl mx-auto;
+}
+
+.hero-title {
+  @apply text-5xl md:text-6xl font-bold text-black mb-6 leading-tight;
+}
+
+.hero-subtitle {
+  @apply text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed;
+}
+
+.hero-actions {
+  @apply flex flex-col sm:flex-row gap-4 justify-center items-center;
+}
+
+.btn-outline {
+  @apply border-2 border-black text-black px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:bg-black hover:text-white;
+}
+
+.section-padding {
+  @apply py-16;
+}
+
+.section-title {
+  @apply text-3xl md:text-4xl font-bold text-black text-center mb-12;
+}
+
+.steps-grid {
+  @apply grid md:grid-cols-3 gap-8 max-w-5xl mx-auto;
+}
+
+.step-card {
+  @apply text-center p-8 bg-white rounded-xl border border-gray-100 hover:shadow-lg transition-all duration-300;
+}
+
+.step-number {
+  @apply w-12 h-12 bg-black text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4;
+}
+
+.step-card h3 {
+  @apply text-xl font-semibold text-black mb-3;
+}
+
+.step-card p {
+  @apply text-gray-600 leading-relaxed;
+}
+
+.features-grid {
+  @apply grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto;
+}
+
+.feature-card {
+  @apply bg-white p-6 rounded-xl border border-gray-100 text-center hover:shadow-lg transition-all duration-300;
+}
+
+.feature-icon {
+  @apply text-3xl mb-4;
+}
+
+.feature-card h3 {
+  @apply text-lg font-semibold text-black mb-2;
+}
+
+.feature-card p {
+  @apply text-gray-600 text-sm leading-relaxed;
+}
+
+.footer {
+  @apply bg-gray-50 py-12;
+}
+
+.footer-content {
+  @apply grid md:grid-cols-3 gap-8;
+}
+
+.footer-section h4 {
+  @apply font-semibold text-black mb-4;
+}
+
+.footer-section p, .footer-section li {
+  @apply text-gray-600 mb-2;
+}
+
+.footer-section ul {
+  @apply space-y-2;
+}
+
+.footer-section a {
+  @apply text-gray-600 hover:text-black transition-colors;
+}
+
+.footer-bottom {
+  @apply border-t border-gray-200 mt-8 pt-8 text-center text-gray-600;
+}
+
 /* Custom animations for premium feel */
 @keyframes fadeInUp {
   from {
@@ -214,6 +319,41 @@
   @apply h-full bg-black transition-all duration-300 ease-out;
 }
 
+/* Dashboard specific styles */
+.stats-grid {
+  @apply grid md:grid-cols-3 gap-6 mb-8;
+}
+
+.stat-card {
+  @apply bg-white p-6 rounded-xl border border-gray-100 text-center;
+}
+
+.stat-number {
+  @apply text-3xl font-bold text-black mb-2;
+}
+
+.stat-label {
+  @apply text-gray-600 text-sm;
+}
+
+/* Marketplace specific styles */
+.filter-section {
+  @apply bg-white p-6 rounded-xl border border-gray-100 mb-6;
+}
+
+.datasets-grid {
+  @apply grid md:grid-cols-2 lg:grid-cols-3 gap-6;
+}
+
+/* Training specific styles */
+.training-form {
+  @apply bg-white p-8 rounded-xl border border-gray-100 max-w-2xl mx-auto;
+}
+
+.progress-section {
+  @apply mt-8 p-6 bg-gray-50 rounded-xl;
+}
+
 /* Responsive utilities */
 @media (max-width: 768px) {
   .premium-card {
@@ -222,5 +362,13 @@
   
   .btn-premium, .btn-premium-outline {
     @apply px-4 py-2 text-sm;
+  }
+  
+  .hero-title {
+    @apply text-4xl;
+  }
+  
+  .hero-subtitle {
+    @apply text-lg;
   }
 }
