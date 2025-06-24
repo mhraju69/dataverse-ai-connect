@@ -1,27 +1,7 @@
 
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
-export type UserRole = 'data_owner' | 'ai_developer';
-
-export interface User {
-  id: string;
-  name: string;
-  email: string;
-  role: UserRole;
-  walletAddress: string;
-  organization?: string;
-  tokenBalance: number;
-}
-
-interface AuthContextType {
-  user: User | null;
-  login: (userData: Omit<User, 'id' | 'tokenBalance'>) => void;
-  logout: () => void;
-  isAuthenticated: boolean;
-  updateTokenBalance: (newBalance: number) => void;
-}
-
-const AuthContext = createContext<AuthContextType | undefined>(undefined);
+const AuthContext = createContext(undefined);
 
 export const useAuth = () => {
   const context = useContext(AuthContext);
@@ -31,8 +11,8 @@ export const useAuth = () => {
   return context;
 };
 
-export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [user, setUser] = useState<User | null>(null);
+export const AuthProvider = ({ children }) => {
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
     // Check for stored user data on mount
@@ -42,8 +22,8 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     }
   }, []);
 
-  const login = (userData: Omit<User, 'id' | 'tokenBalance'>) => {
-    const newUser: User = {
+  const login = (userData) => {
+    const newUser = {
       ...userData,
       id: Math.random().toString(36).substr(2, 9),
       tokenBalance: 1000, // Starting balance
@@ -57,7 +37,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     localStorage.removeItem('ai_marketplace_user');
   };
 
-  const updateTokenBalance = (newBalance: number) => {
+  const updateTokenBalance = (newBalance) => {
     if (user) {
       const updatedUser = { ...user, tokenBalance: newBalance };
       setUser(updatedUser);

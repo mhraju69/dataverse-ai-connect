@@ -3,12 +3,7 @@ import React from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 
-interface LayoutProps {
-  children: React.ReactNode;
-  showNavigation?: boolean;
-}
-
-const Layout: React.FC<LayoutProps> = ({ children, showNavigation = true }) => {
+const Layout = ({ children, showNavigation = true }) => {
   const { user, logout, isAuthenticated } = useAuth();
   const location = useLocation();
   const navigate = useNavigate();
